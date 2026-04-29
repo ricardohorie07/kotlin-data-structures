@@ -30,6 +30,8 @@ fun tamanhoNome(nome: String?): Int { // Null Safety, impedir erros com null, ob
     return nome?.length ?: 0
 }
 
+data class Produto(val nome: String, val preco: Double) //Data class
+
 fun main() {
     println("Iniciando projeto de algoritmos em Kotlin")
     // fun exemplo
@@ -50,6 +52,17 @@ fun main() {
     //fun tamanhoNome
     println(tamanhoNome("Ricardo"))
     println(tamanhoNome(null))
+
+    //Data class
+    val p1 = Produto("Notebook", 3500.0)
+    val p2 = Produto("Notebook", 3500.0)
+    println(p1 == p2) // true
+
+    //Collections
+    val lista = mutableListOf(1, 2, 3)
+    lista.add(4)
+    lista.remove(2)
+    println(lista)
 }
 
 
