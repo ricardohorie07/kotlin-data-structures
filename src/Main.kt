@@ -63,6 +63,11 @@ fun main() {
     lista.add(4)
     lista.remove(2)
     println(lista)
+
+    //lambda
+    val numeros = listOf(1, 2, 3, 4, 5)
+    val pares = numeros.filter { it % 2 == 0 }
+    println(pares)
 }
 
 
