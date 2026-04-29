@@ -36,6 +36,28 @@ fun Int.dobro(): Int { //Extension Function
     return this * 2
 }
 
+class Pilha<T> { //Pilha
+
+    private val elementos = mutableListOf<T>()
+
+    fun push(valor: T) {
+        elementos.add(valor)
+    }
+
+    fun pop(): T? {
+        if (elementos.isEmpty()) return null
+        return elementos.removeAt(elementos.size - 1)
+    }
+
+    fun peek(): T? {
+        return elementos.lastOrNull()
+    }
+
+    fun estaVazia(): Boolean {
+        return elementos.isEmpty()
+    }
+}
+
 fun main() {
     println("Iniciando projeto de algoritmos em Kotlin")
     // fun exemplo
@@ -75,6 +97,15 @@ fun main() {
 
     //fun int.dobro
     println(5.dobro())
+
+    //Pilha
+    val pilha = Pilha<Int>()
+    pilha.push(10)
+    pilha.push(20)
+    pilha.push(30)
+    println("Topo: ${pilha.peek()}")
+    println("Removido: ${pilha.pop()}")
+    println("Topo agora: ${pilha.peek()}")
 }
 
 
