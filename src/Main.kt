@@ -32,6 +32,10 @@ fun tamanhoNome(nome: String?): Int { // Null Safety, impedir erros com null, ob
 
 data class Produto(val nome: String, val preco: Double) //Data class
 
+fun Int.dobro(): Int { //Extension Function
+    return this * 2
+}
+
 fun main() {
     println("Iniciando projeto de algoritmos em Kotlin")
     // fun exemplo
@@ -68,6 +72,9 @@ fun main() {
     val numeros = listOf(1, 2, 3, 4, 5)
     val pares = numeros.filter { it % 2 == 0 }
     println(pares)
+
+    //fun int.dobro
+    println(5.dobro())
 }
 
 
