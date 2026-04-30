@@ -1,63 +1,3 @@
-fun exemploLoop() { // exemplo de loop
-    for (i in 1..5) {
-        println("i = $i")
-    }
-}
-
-class Pessoa(val nome: String, var idade: Int) { // exemplo de classe e programa orientado a objetos
-
-    fun fazerAniversario() {
-        idade++
-    }
-
-    fun apresentar() {
-        println("Meu nome é $nome e tenho $idade anos")
-    }
-}
-
-class Caixa<T>(private var valor: T) { // Generics, um tipo que você define depois
-
-    fun get(): T {
-        return valor
-    }
-
-    fun set(novoValor: T) {
-        valor = novoValor
-    }
-}
-
-fun tamanhoNome(nome: String?): Int { // Null Safety, impedir erros com null, obrigar você a tratar null
-    return nome?.length ?: 0
-}
-
-data class Produto(val nome: String, val preco: Double) //Data class
-
-fun Int.dobro(): Int { //Extension Function
-    return this * 2
-}
-
-class Pilha<T> { //Pilha
-
-    private val elementos = mutableListOf<T>()
-
-    fun push(valor: T) {
-        elementos.add(valor)
-    }
-
-    fun pop(): T? {
-        if (elementos.isEmpty()) return null
-        return elementos.removeAt(elementos.size - 1)
-    }
-
-    fun peek(): T? {
-        return elementos.lastOrNull()
-    }
-
-    fun estaVazia(): Boolean {
-        return elementos.isEmpty()
-    }
-}
-
 fun main() {
     println("Iniciando projeto de algoritmos em Kotlin")
     // fun exemplo
@@ -106,6 +46,16 @@ fun main() {
     println("Topo: ${pilha.peek()}")
     println("Removido: ${pilha.pop()}")
     println("Topo agora: ${pilha.peek()}")
+
+    //lista encadeada
+    val lista1 = ListaEncadeada<Int>()
+    lista1.add(10)
+    lista1.add(20)
+    lista1.add(30)
+    lista1.print()
+    println(lista1.buscar(20))
+    lista1.remove(20)
+    lista1.print()
 }
 
 
