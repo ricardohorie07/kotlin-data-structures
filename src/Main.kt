@@ -56,6 +56,43 @@ fun main() {
     println(lista1.buscar(20))
     lista1.remove(20)
     lista1.print()
+
+    //Fila simples
+    val fila = Fila<String>()
+    fila.enqueue("A")
+    fila.enqueue("B")
+    fila.enqueue("C")
+    println("Primeiro: ${fila.peek()}") // A
+    println("Removido: ${fila.dequeue()}") // A
+    println("Removido: ${fila.dequeue()}") // B
+    println("Tamanho: ${fila.size()}") // 1
+    println("Está vazia? ${fila.isEmpty()}") // false
+
+    //Fila encadeda
+    val fila1 = FilaEncadeada<String>()
+    fila1.enqueue("A")
+    fila1.enqueue("B")
+    fila1.enqueue("C")
+    fila1.print()
+    println("Primeiro: ${fila1.peek()}") // A
+    println("Removido: ${fila1.dequeue()}") // A
+    println("Removido: ${fila1.dequeue()}") // B
+    fila1.print()
+    println("Tamanho: ${fila1.size()}")
+    println("Está vazia? ${fila1.isEmpty()}")
+
+    //Busca binaria e ordenação
+    val numeros1 = mutableListOf(8, 3, 5, 1, 9, 2)
+    println("Lista original: $numeros1")
+    bubbleSort(numeros1)
+    println("Lista ordenada: $numeros1")
+    val alvo = 5
+    val posicao = buscaBinaria(numeros1, alvo)
+    if (posicao != -1) {
+        println("Valor $alvo encontrado na posição $posicao")
+    } else {
+        println("Valor $alvo não encontrado")
+    }
 }
 
 
